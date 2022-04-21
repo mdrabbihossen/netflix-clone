@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/json/root_app_json.dart';
 import 'package:flutter_application_1/pages/coming_soon_page.dart';
+import 'package:flutter_application_1/pages/downloads_page.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 import 'package:flutter_application_1/pages/search_page.dart';
 
@@ -28,15 +29,7 @@ class _RootAppState extends State<RootApp> {
       HomePage(),
       ComingSoon(),
       SearchPage(),
-      Center(
-        child: Text(
-          "Downloads",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
-      ),
+      DownloadPage(),
       Center(
         child: Text(
           "Profile",

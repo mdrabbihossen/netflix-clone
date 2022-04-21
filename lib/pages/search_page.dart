@@ -50,6 +50,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget searchBody() {
     return SingleChildScrollView(
       controller: ScrollController(),
+      physics: BouncingScrollPhysics(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -71,7 +72,7 @@ class _SearchPageState extends State<SearchPage> {
             children: List.generate(
               searchJson.length,
               (index) => Padding(
-                padding: const EdgeInsets.only(top: 30.0),
+                padding: const EdgeInsets.only(top: 30.0, bottom: 10),
                 child: ListTile(
                   leading: Image.asset(
                     searchJson[index]['img'],
