@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/json/root_app_json.dart';
+import 'package:flutter_application_1/pages/coming_soon.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 
 class RootApp extends StatefulWidget {
@@ -24,15 +25,7 @@ class _RootAppState extends State<RootApp> {
   Widget getBody() {
     return IndexedStack(index: activeTab, children: const [
       HomePage(),
-      Center(
-        child: Text(
-          "Coming Soon",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
-      ),
+      ComingSoon(),
       Center(
         child: Text(
           "Search",
