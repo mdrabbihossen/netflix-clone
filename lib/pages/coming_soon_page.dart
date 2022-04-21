@@ -244,6 +244,19 @@ class _ComingSoonState extends State<ComingSoon> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: Text(
+                        comingSoonJson[index]['type'],
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

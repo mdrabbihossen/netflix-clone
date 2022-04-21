@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/json/root_app_json.dart';
-import 'package:flutter_application_1/pages/coming_soon.dart';
+import 'package:flutter_application_1/pages/coming_soon_page.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
+import 'package:flutter_application_1/pages/search_page.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -26,15 +27,7 @@ class _RootAppState extends State<RootApp> {
     return IndexedStack(index: activeTab, children: const [
       HomePage(),
       ComingSoon(),
-      Center(
-        child: Text(
-          "Search",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
-      ),
+      SearchPage(),
       Center(
         child: Text(
           "Downloads",
