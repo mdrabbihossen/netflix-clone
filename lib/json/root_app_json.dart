@@ -1,8 +1,9 @@
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter/material.dart';
 
 List items = [
-  {"icon": AntDesign.home, "text": "Home"},
-  {"icon": AntDesign.playcircleo, "text": "Coming Soon"},
-  {"icon": AntDesign.search1, "text": "Search"},
-  {"icon": AntDesign.download, "text": "Downloads"},
+  {"icon": Icons.home, "text": "Home"},
+  {"icon": Icons.play_circle, "text": "Coming Soon"},
+  {"icon": Icons.search, "text": "Search"},
+  {"icon": Icons.download, "text": "Downloads"},
+  {"icon": Icons.person, "text": "Profile"},
 ];
