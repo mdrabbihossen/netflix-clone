@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/json/search_json.dart';
 
@@ -15,6 +13,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      // Appbar
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.black,
@@ -68,6 +67,7 @@ class _SearchPageState extends State<SearchPage> {
           SizedBox(
             height: 20,
           ),
+          // here is contains some of search items
           Column(
             children: List.generate(
               searchJson.length,

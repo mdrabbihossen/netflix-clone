@@ -11,7 +11,7 @@ class RootApp extends StatefulWidget {
   @override
   State<RootApp> createState() => _RootAppState();
 }
-
+// this is main root page where every page stayed
 class _RootAppState extends State<RootApp> {
   int activeTab = 0;
   @override
@@ -42,6 +42,7 @@ class _RootAppState extends State<RootApp> {
     ]);
   }
 
+ // bottom navigation
   Widget getFooter() {
     return Container(
       height: 80,

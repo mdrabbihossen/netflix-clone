@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Stack(
                     children: [
+                      // homepage body banner page
                       Container(
                         height: 500,
                         decoration: BoxDecoration(
@@ -57,8 +58,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      // ignore: sized_box_for_whitespace
-                      Container(
+                      // homepage body banner end
+                      // homepage body title
+                      SizedBox(
                         height: 500,
                         width: size.width,
                         child: Column(
@@ -82,9 +84,11 @@ class _HomePageState extends State<HomePage> {
                       )
                     ],
                   ),
+                  // homepage body title end
                   SizedBox(
                     height: 15,
                   ),
+                  // homepage body list
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -160,6 +164,7 @@ class _HomePageState extends State<HomePage> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // My List Items
                       Padding(
                         padding: EdgeInsets.only(left: 18.0),
                         child: Text(
@@ -198,9 +203,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                      // My List Items end
                       SizedBox(
                         height: 30,
                       ),
+                      // Polpular on netflix items
                       Padding(
                         padding: EdgeInsets.only(left: 18.0),
                         child: Text(
@@ -239,9 +246,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                      // Polpular on netflix items end
                       SizedBox(
                         height: 30,
                       ),
+                      // Trending Now items
                       Padding(
                         padding: EdgeInsets.only(left: 18.0),
                         child: Text(
@@ -280,9 +289,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                      // Trending Now items end
                       SizedBox(
                         height: 30,
                       ),
+                      // Netflix original items
                       Padding(
                         padding: EdgeInsets.only(left: 18.0),
                         child: Text(
@@ -321,9 +332,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                      // Netflix original items end
                       SizedBox(
                         height: 30,
                       ),
+                      // Anime items
                       Padding(
                         padding: EdgeInsets.only(left: 18.0),
                         child: Text(
@@ -362,12 +375,15 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                      // Anime items end
                     ],
                   ),
                 ],
               ),
             ),
-            // ignore: avoid_unnecessary_containers
+           
+            // Homepage appbar
+             // ignore: avoid_unnecessary_containers
             Container(
               child: SafeArea(
                 child: Column(
@@ -408,6 +424,7 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       height: 15,
                     ),
+                    // homepage banner categories
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: const [
