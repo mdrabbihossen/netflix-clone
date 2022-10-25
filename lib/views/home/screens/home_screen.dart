@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/custom_appbar.dart';
 import 'package:flutter_application_1/models/json/home_json.dart';
+import 'package:flutter_application_1/views/home/widgets/anime_items.dart';
+import 'package:flutter_application_1/views/home/widgets/homepage_banner_category.dart';
+import 'package:flutter_application_1/views/home/widgets/movie_title.dart';
+import 'package:flutter_application_1/views/home/widgets/myList_items.dart';
+import 'package:flutter_application_1/views/home/widgets/netflix_originals.dart';
+import 'package:flutter_application_1/views/home/widgets/popular_netflix.dart';
+import 'package:flutter_application_1/views/home/widgets/trending_noew.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -173,254 +180,43 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // My List Items
-                      Padding(
-                        padding: EdgeInsets.only(left: 18.0),
-                        child: Text(
-                          'My List',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                      movieTitle(movieTitle: 'My List'),
                       SizedBox(height: 15),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Row(
-                            children: List.generate(
-                              mylist.length,
-                              (index) => Container(
-                                margin: EdgeInsets.only(left: 8),
-                                width: 110,
-                                height: 160,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      mylist[index]['img'],
-                                    ),
-                                  ),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      myListItems(),
                       // My List Items end
                       SizedBox(height: 30),
                       // Popular on netflix items
-                      Padding(
-                        padding: EdgeInsets.only(left: 18.0),
-                        child: Text(
-                          'Popular On Netflix',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                      movieTitle(movieTitle: 'Popular on Netflix'),
                       SizedBox(height: 15),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Row(
-                            children: List.generate(
-                              popularList.length,
-                              // ignore: sized_box_for_whitespace
-                              (index) => Container(
-                                margin: EdgeInsets.only(left: 8),
-                                width: 110,
-                                height: 160,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      popularList[index]['img'],
-                                    ),
-                                  ),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      popularOnNetflixItems(),
                       // Popular on netflix items end
                       SizedBox(height: 30),
                       // Trending Now items
-                      Padding(
-                        padding: EdgeInsets.only(left: 18.0),
-                        child: Text(
-                          'Trending Now',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                      movieTitle(movieTitle: 'Trending Now'),
                       SizedBox(height: 15),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Row(
-                            children: List.generate(
-                              trendingList.length,
-                              // ignore: sized_box_for_whitespace
-                              (index) => Container(
-                                margin: EdgeInsets.only(left: 8),
-                                width: 110,
-                                height: 160,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      trendingList[index]['img'],
-                                    ),
-                                  ),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      trendingNowItems(),
                       // Trending Now items end
                       SizedBox(height: 30),
                       // Netflix original items
-                      Padding(
-                        padding: EdgeInsets.only(left: 18.0),
-                        child: Text(
-                          'Netflix Originals',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                      movieTitle(movieTitle: 'Netflix Original'),
                       SizedBox(height: 15),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Row(
-                            children: List.generate(
-                              originalList.length,
-                              // ignore: sized_box_for_whitespace
-                              (index) => Container(
-                                margin: EdgeInsets.only(left: 8),
-                                width: 110,
-                                height: 160,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      originalList[index]['img'],
-                                    ),
-                                  ),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      netflixOriginalItems(),
                       // Netflix original items end
                       SizedBox(height: 30),
                       // Anime items
-                      Padding(
-                        padding: EdgeInsets.only(left: 18.0),
-                        child: Text(
-                          'Anime',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                      movieTitle(movieTitle: 'Anime'),
                       SizedBox(
                         height: 15,
                       ),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 10.0),
-                          child: Row(
-                            children: List.generate(
-                              animeList.length,
-                              // ignore: sized_box_for_whitespace
-                              (index) => Container(
-                                margin: EdgeInsets.only(left: 8),
-                                width: 110,
-                                height: 160,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      animeList[index]['img'],
-                                    ),
-                                  ),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      animeItems(),
                       // Anime items end
+                      SizedBox(height: 30),
                     ],
                   ),
                 ],
               ),
             ),
-
-            // Homepage appbar
-
-            Container(
-              child: SafeArea(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 15,
-                    ),
-                    // homepage banner categories
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const [
-                        Text(
-                          'Tv Shows',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          'Movies',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          'Categories',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Icon(
-                          Icons.keyboard_arrow_down,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            HomePageBannerCategory(),
           ],
         ),
       ),
