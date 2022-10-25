@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/json/coming_soon_json.dart';
+import 'package:flutter_application_1/models/json/coming_soon_json.dart';
+
 
 class ComingSoon extends StatefulWidget {
   const ComingSoon({Key? key}) : super(key: key);

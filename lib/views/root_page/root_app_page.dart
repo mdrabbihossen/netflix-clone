@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/json/root_app_json.dart';
-import 'package:flutter_application_1/pages/coming_soon_page.dart';
-import 'package:flutter_application_1/pages/downloads_page.dart';
-import 'package:flutter_application_1/pages/homepage.dart';
-import 'package:flutter_application_1/pages/search_page.dart';
+import 'package:flutter_application_1/models/json/root_app_json.dart';
+
+import 'package:flutter_application_1/views/coming_soon/screens/coming_soon_page.dart';
+import 'package:flutter_application_1/views/downloads/screens/downloads_page.dart';
+import 'package:flutter_application_1/views/home/screens/home_screen.dart';
+import 'package:flutter_application_1/views/search/screens/search_page.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -11,9 +12,11 @@ class RootApp extends StatefulWidget {
   @override
   State<RootApp> createState() => _RootAppState();
 }
+
 // this is main root page where every page stayed
 class _RootAppState extends State<RootApp> {
   int activeTab = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +29,7 @@ class _RootAppState extends State<RootApp> {
 
   Widget getBody() {
     return IndexedStack(index: activeTab, children: const [
-      HomePage(),
+      HomeScreen(),
       ComingSoon(),
       SearchPage(),
       DownloadPage(),
@@ -42,7 +45,7 @@ class _RootAppState extends State<RootApp> {
     ]);
   }
 
- // bottom navigation
+  // bottom navigation
   Widget getFooter() {
     return Container(
       height: 80,

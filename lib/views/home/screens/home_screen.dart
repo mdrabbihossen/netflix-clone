@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/json/home_json.dart';
+import 'package:flutter_application_1/models/json/home_json.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                               'Exiting Sci-fi Drama - Sci-fi Adventure',
                               style:
                                   TextStyle(color: Colors.grey, fontSize: 11),
-                            )
+                            ),
                           ],
                         ),
                       )
@@ -381,9 +382,9 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-           
+
             // Homepage appbar
-             // ignore: avoid_unnecessary_containers
+            // ignore: avoid_unnecessary_containers
             Container(
               child: SafeArea(
                 child: Column(
