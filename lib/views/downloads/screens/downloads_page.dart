@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants/custom_appbar.dart';
 
 class DownloadPage extends StatefulWidget {
   const DownloadPage({Key? key}) : super(key: key);
@@ -12,29 +13,9 @@ class _DownloadPageState extends State<DownloadPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
-        title: Text('My Downloads'),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.collections_bookmark_outlined,
-              color: Colors.white,
-              size: 25,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Image.asset(
-              'assets/images/profile.jpeg',
-              width: 30,
-              height: 30,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ],
+      appBar: customAppBar(
+        color: Colors.black,
+        appBarTitle: 'My Downloads'
       ),
       body: downloadBody(),
     );

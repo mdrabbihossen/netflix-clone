@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
-AppBar get appBar => AppBar(
+AppBar customAppBar({
+  required String appBarTitle,
+  Widget? leading,
+  Color? color
+}) =>
+    AppBar(
+      backgroundColor: color,
       elevation: 0,
-      backgroundColor: Colors.black,
-      title: Text(
-        'Coming Soon',
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-      ),
+      title: Text(appBarTitle),
+      leading: leading,
       actions: [
         IconButton(
           onPressed: () {},

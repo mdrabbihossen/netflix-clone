@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants/custom_appbar.dart';
 import 'package:flutter_application_1/models/json/home_json.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,6 +14,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      extendBodyBehindAppBar: true,
+      appBar: customAppBar(
+        color: Colors.transparent,
+        appBarTitle: '',
+        leading: Image.asset(
+          'assets/images/logo.ico',
+          height: 30,
+          width: 30,
+        ),
+      ),
       body: homePageBody(),
     );
   }
@@ -24,7 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
       child: SingleChildScrollView(
         child: Stack(
           children: [
-            // ignore: sized_box_for_whitespace
             Container(
               width: size.height - 80,
               child: Column(
@@ -181,7 +191,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Row(
                             children: List.generate(
                               mylist.length,
-                              // ignore: sized_box_for_whitespace
                               (index) => Container(
                                 margin: EdgeInsets.only(left: 8),
                                 width: 110,
@@ -370,39 +379,6 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SafeArea(
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, top: 10),
-                          child: Image.asset(
-                            'assets/images/logo.ico',
-                            width: size.width / 10,
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.collections_bookmark_outlined,
-                                color: Colors.white,
-                                size: 25,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: Image.asset(
-                                'assets/images/profile.jpeg',
-                                width: 30,
-                                height: 30,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
                     SizedBox(
                       height: 15,
                     ),

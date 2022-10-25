@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/models/json/coming_soon_json.dart';
-import 'package:flutter_application_1/views/coming_soon/widgets/appbar.dart';
+import 'package:flutter_application_1/constants/custom_appbar.dart';
+
 import 'package:flutter_application_1/views/coming_soon/widgets/coming_soon_body.dart';
 
 class ComingSoon extends StatefulWidget {
@@ -15,7 +15,10 @@ class _ComingSoonState extends State<ComingSoon> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: appBar,
+        appBar: customAppBar(
+          color: Colors.black,
+          appBarTitle: 'Coming Soon',
+        ),
         backgroundColor: Colors.black,
         body: comingSoonBody(context: context),
       ),
