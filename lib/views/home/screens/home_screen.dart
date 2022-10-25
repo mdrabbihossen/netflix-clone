@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(5),
                           ),
                           child: Row(
-                            children: const [
+                            children:  [
                               Icon(
                                 Icons.play_arrow,
                                 color: Colors.black,
@@ -160,6 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 15,
+                                  color: Colors.black,
                                 ),
                               ),
                             ],
