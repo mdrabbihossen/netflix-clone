@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/custom_appbar.dart';
+import 'package:flutter_application_1/models/json/video_detail_json.dart';
 import 'package:flutter_application_1/views/video_details/widgets/custom_btn.dart';
 import 'package:video_player/video_player.dart';
 
@@ -17,6 +18,7 @@ class VideoDetailScreen extends StatefulWidget {
 
 class _VideoDetailScreenState extends State<VideoDetailScreen> {
   VideoPlayerController? controller;
+  int activeEpisode = 0;
 
   @override
   void initState() {
@@ -290,7 +292,240 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                         ],
                       ),
                       SizedBox(height: 8),
-
+                      Text(
+                        "Considered a fool and unfit to lead, Nobunaga rises to power as the head of the Oda clan, spurring dissent among those in his family vying for control.",
+                        style: TextStyle(
+                          height: 1.4,
+                          color: Colors.white.withOpacity(0.9),
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        "Cast: Masayoshi Haneda, Masami Kosaka, Hideaki Ito... more",
+                        style: TextStyle(
+                          fontSize: 13,
+                          height: 1.4,
+                          color: Colors.grey.withOpacity(0.9),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Row(
+                          children: List.generate(
+                            likesList.length,
+                            (index) => Padding(
+                              padding: EdgeInsets.only(right: 50),
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    likesList[index]['icon'],
+                                    size: 25,
+                                    color: Colors.white.withOpacity(0.9),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Text(
+                                    likesList[index]['text'],
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      height: 1.4,
+                                      color: Colors.grey.withOpacity(0.9),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: List.generate(
+                            episodesList.length,
+                            (index) => GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  activeEpisode = index;
+                                });
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.only(right: 25),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        border: Border(
+                                          top: BorderSide(
+                                              width: 4,
+                                              color: activeEpisode == index
+                                                  ? Colors.red.withOpacity(0.8)
+                                                  : Colors.transparent),
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(top: 12),
+                                        child: Text(
+                                          episodesList[index],
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              color: activeEpisode == index
+                                                  ? Colors.white
+                                                      .withOpacity(0.9)
+                                                  : Colors.white
+                                                      .withOpacity(0.5),
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 30),
+                      Text(
+                        "Season 1",
+                        style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.white.withOpacity(0.5),
+                            fontWeight: FontWeight.w500),
+                      ),
+                      SizedBox(height: 15),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: List.generate(
+                          movieList.length,
+                          (index) => Padding(
+                            padding: EdgeInsets.only(bottom: 20),
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: (size.width - 30) * 0.85,
+                                      height: 100,
+                                      child: Row(
+                                        children: [
+                                          // movie list
+                                          Container(
+                                            width: 150,
+                                            child: Stack(
+                                              children: [
+                                                Container(
+                                                  width: 150,
+                                                  height: 90,
+                                                  decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5),
+                                                      image: DecorationImage(
+                                                          image: AssetImage(
+                                                              movieList[index]
+                                                                  ['img']),
+                                                          fit: BoxFit.cover)),
+                                                ),
+                                                Container(
+                                                  width: 150,
+                                                  height: 90,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.black
+                                                        .withOpacity(0.3),
+                                                  ),
+                                                ),
+                                                Positioned(
+                                                  top: 30,
+                                                  left: 57,
+                                                  child: Container(
+                                                    width: 38,
+                                                    height: 38,
+                                                    decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      border: Border.all(
+                                                          width: 2,
+                                                          color: Colors.white),
+                                                      color: Colors.black
+                                                          .withOpacity(0.4),
+                                                    ),
+                                                    child: Center(
+                                                      child: Icon(
+                                                        Icons.play_arrow,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          // movie title
+                                          Container(
+                                            width: (size.width) * 0.35,
+                                            child: Padding(
+                                              padding:
+                                                  EdgeInsets.only(left: 10),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    movieList[index]['title'],
+                                                    style: TextStyle(
+                                                      fontSize: 15,
+                                                      height: 1.3,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color: Colors.white
+                                                          .withOpacity(0.9),
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 3),
+                                                  Text(
+                                                    movieList[index]
+                                                        ['duration'],
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.white
+                                                          .withOpacity(0.5),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          // download
+                                          Container(
+                                            child: Center(
+                                              child: Icon(
+                                                Icons.file_download,
+                                                color: Colors.white
+                                                    .withOpacity(0.7),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  movieList[index]['description'],
+                                  style: TextStyle(
+                                    height: 1.4,
+                                    color: Colors.white.withOpacity(0.5),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
