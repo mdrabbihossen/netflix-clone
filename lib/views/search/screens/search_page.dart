@@ -17,7 +17,7 @@ class _SearchPageState extends State<SearchPage> {
       backgroundColor: Colors.black,
       // Appbar
       appBar: searchBar,
-      body: searchBody,
+      body: searchBody(context: context),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/json/coming_soon_json.dart';
+
 Widget comingSoonBody({required BuildContext context}) {
   final size = MediaQuery.of(context).size;
   return SingleChildScrollView(
@@ -50,12 +51,11 @@ Widget comingSoonBody({required BuildContext context}) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: List.generate(
             comingSoonJson.length,
-                (index) => Padding(
+            (index) => Padding(
               padding: EdgeInsets.only(bottom: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Container(
                     height: 220,
                     child: Stack(
@@ -63,8 +63,7 @@ Widget comingSoonBody({required BuildContext context}) {
                         Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                                image:
-                                AssetImage(comingSoonJson[index]['img']),
+                                image: AssetImage(comingSoonJson[index]['img']),
                                 fit: BoxFit.cover),
                           ),
                         ),
@@ -78,29 +77,29 @@ Widget comingSoonBody({required BuildContext context}) {
                   ),
                   comingSoonJson[index]['duration']
                       ? Column(
-                    children: [
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Stack(
-                        children: [
-                          Container(
-                            height: 2.5,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.7),
+                          children: [
+                            SizedBox(
+                              height: 20,
                             ),
-                          ),
-                          Container(
-                            width: size.width * 0.34,
-                            height: 2.5,
-                            decoration: BoxDecoration(
-                              color: Colors.red.withOpacity(0.7),
+                            Stack(
+                              children: [
+                                Container(
+                                  height: 2.5,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.withOpacity(0.7),
+                                  ),
+                                ),
+                                Container(
+                                  width: size.width * 0.34,
+                                  height: 2.5,
+                                  decoration: BoxDecoration(
+                                    color: Colors.red.withOpacity(0.7),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )
+                          ],
+                        )
                       : Container(),
                   SizedBox(
                     height: 15,

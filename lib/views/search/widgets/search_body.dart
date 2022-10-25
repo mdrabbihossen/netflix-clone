@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/json/search_json.dart';
+import 'package:flutter_application_1/views/video_details/screens/video_details_screen.dart';
 
-Widget get searchBody => SingleChildScrollView(
+Widget searchBody({required BuildContext context}) => SingleChildScrollView(
       controller: ScrollController(),
       physics: BouncingScrollPhysics(),
       child: Column(
@@ -28,6 +29,16 @@ Widget get searchBody => SingleChildScrollView(
               (index) => Padding(
                 padding: const EdgeInsets.only(top: 30.0, bottom: 10),
                 child: ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VideoDetailScreen(
+                          videoUrl: 'assets/videos/video_1.mp4',
+                        ),
+                      ),
+                    );
+                  },
                   leading: Image.asset(
                     searchJson[index]['img'],
                   ),

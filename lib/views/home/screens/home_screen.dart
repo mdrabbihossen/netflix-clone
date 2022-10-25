@@ -8,6 +8,7 @@ import 'package:flutter_application_1/views/home/widgets/myList_items.dart';
 import 'package:flutter_application_1/views/home/widgets/netflix_originals.dart';
 import 'package:flutter_application_1/views/home/widgets/popular_netflix.dart';
 import 'package:flutter_application_1/views/home/widgets/trending_noew.dart';
+import 'package:flutter_application_1/views/video_details/screens/video_details_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -128,30 +129,41 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ],
                       ),
-                      Container(
-                        padding: EdgeInsets.only(
-                            left: 8, right: 13, top: 5, bottom: 5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Row(
-                          children: const [
-                            Icon(
-                              Icons.play_arrow,
-                              color: Colors.black,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VideoDetailScreen(
+                                  videoUrl: 'assets/videos/video_1.mp4'),
                             ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              'Play',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 15,
+                          );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(
+                              left: 8, right: 13, top: 5, bottom: 5),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Row(
+                            children: const [
+                              Icon(
+                                Icons.play_arrow,
+                                color: Colors.black,
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Play',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       Column(
@@ -182,33 +194,86 @@ class _HomeScreenState extends State<HomeScreen> {
                       // My List Items
                       movieTitle(movieTitle: 'My List'),
                       SizedBox(height: 15),
-                      myListItems(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VideoDetailScreen(
+                                  videoUrl: 'assets/videos/video_2.mp4'),
+                            ),
+                          );
+                        },
+                        child: myListItems(),
+                      ),
                       // My List Items end
                       SizedBox(height: 30),
                       // Popular on netflix items
                       movieTitle(movieTitle: 'Popular on Netflix'),
                       SizedBox(height: 15),
-                      popularOnNetflixItems(),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VideoDetailScreen(
+                                  videoUrl: 'assets/videos/video_1.mp4'),
+                            ),
+                          );
+                        },
+                        child: popularOnNetflixItems(),
+                      ),
                       // Popular on netflix items end
                       SizedBox(height: 30),
                       // Trending Now items
                       movieTitle(movieTitle: 'Trending Now'),
                       SizedBox(height: 15),
-                      trendingNowItems(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VideoDetailScreen(
+                                  videoUrl: 'assets/videos/video_1.mp4'),
+                            ),
+                          );
+                        },
+                        child: trendingNowItems(),
+                      ),
                       // Trending Now items end
                       SizedBox(height: 30),
                       // Netflix original items
                       movieTitle(movieTitle: 'Netflix Original'),
                       SizedBox(height: 15),
-                      netflixOriginalItems(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VideoDetailScreen(
+                                  videoUrl: 'assets/videos/video_2.mp4'),
+                            ),
+                          );
+                        },
+                        child: netflixOriginalItems(),
+                      ),
                       // Netflix original items end
                       SizedBox(height: 30),
                       // Anime items
                       movieTitle(movieTitle: 'Anime'),
-                      SizedBox(
-                        height: 15,
+                      SizedBox(height: 15),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VideoDetailScreen(
+                                  videoUrl: 'assets/videos/video_1.mp4'),
+                            ),
+                          );
+                        },
+                        child: animeItems(),
                       ),
-                      animeItems(),
                       // Anime items end
                       SizedBox(height: 30),
                     ],
