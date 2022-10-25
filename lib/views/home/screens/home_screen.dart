@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/json/home_json.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -159,9 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 40,
-                  ),
+                  SizedBox(height: 40),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -176,9 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      SizedBox(
-                        height: 15,
-                      ),
+                      SizedBox(height: 15),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Padding(
@@ -205,10 +200,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       // My List Items end
-                      SizedBox(
-                        height: 30,
-                      ),
-                      // Polpular on netflix items
+                      SizedBox(height: 30),
+                      // Popular on netflix items
                       Padding(
                         padding: EdgeInsets.only(left: 18.0),
                         child: Text(
@@ -219,9 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      SizedBox(
-                        height: 15,
-                      ),
+                      SizedBox(height: 15),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Padding(
@@ -247,10 +238,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      // Polpular on netflix items end
-                      SizedBox(
-                        height: 30,
-                      ),
+                      // Popular on netflix items end
+                      SizedBox(height: 30),
                       // Trending Now items
                       Padding(
                         padding: EdgeInsets.only(left: 18.0),
@@ -262,9 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      SizedBox(
-                        height: 15,
-                      ),
+                      SizedBox(height: 15),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Padding(
@@ -291,9 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       // Trending Now items end
-                      SizedBox(
-                        height: 30,
-                      ),
+                      SizedBox(height: 30),
                       // Netflix original items
                       Padding(
                         padding: EdgeInsets.only(left: 18.0),
@@ -305,9 +290,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      SizedBox(
-                        height: 15,
-                      ),
+                      SizedBox(height: 15),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Padding(
@@ -334,9 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       // Netflix original items end
-                      SizedBox(
-                        height: 30,
-                      ),
+                      SizedBox(height: 30),
                       // Anime items
                       Padding(
                         padding: EdgeInsets.only(left: 18.0),
@@ -384,7 +365,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
             // Homepage appbar
-            // ignore: avoid_unnecessary_containers
+
             Container(
               child: SafeArea(
                 child: Column(
